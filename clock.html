@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="clock.css">
+    <script src="clock.js" defer></script>
+    <script>
+        (function() {
+            document.addEventListener("mousemove", parallax);
+
+            function parallax(e) {
+                let w = window.innerWidth/2;
+                let h = window.innerHeight/2;
+                let mouseX = e.clientX;
+                let mouseY = e.clientY;
+                let pos = `${50 - (mouseX - w) * 0.02}% ${50 - (mouseY - h) * 0.02}%`;
+                document.querySelector("#background").style.backgroundPosition = pos; /*https://www.winterwind.com/tutorials/css/4*/
+            }
+        })();
+    </script>
+    <title>Clock</title>
+</head>
+<body>
+    <div id="name">
+        <p>Maria Rjabtseva</p>
+        <p>https://github.com/nkdsnaketlu/1kodutoo</p>
+    </div>
+       <!--  <img id="background-img" src="https://media.discordapp.net/attachments/632435357945954344/1355502911399923812/image.png?ex=67ea7b76&is=67e929f6&hm=bca8b6a54b210da6490d40b5ff580b771b7edcaa9ae84309678d8250ceb15d86&=&format=webp&quality=lossless&width=851&height=450" alt="background">-->
+        <div id="container">
+            <div id="clock">
+                <div id="hours">0h</div>
+                <div id="minutes">0m</div>
+                <div id="seconds">0s</div>
+                <img src="https://vignette.wikia.nocookie.net/vsbattles/images/6/60/Naked_Snake3.png/revision/latest?cb=20170101140133" alt="Snake" height="100px" width=" 50px">
+            </div>
+            <div id="date">date month year</div>
+        </div>
+        <div id="buttons">
+                <label for="brightnessBtn">Brightness: </label>
+                <input id="brightnessBtn" type="range" min="0" max="200" value="100">
+                <br>
+                <label for="blurBtn">Blur: </label>
+                <input id="blurBtn" type="range" min="0" max="20" value="0" step=".1">
+                <br>
+                <label for="backgroundIput">Custom image:</label>
+                <input id="backgroundIput" type="text">
+                <button id="okBtn" onclick="setBackground()">ok</button>
+        </div>
+        <div id="background"></div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+body {
+    background-color: rgb(0, 0, 0);
+    margin: 0px;
+    padding: 0px;
+}
+
+#background {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url('https://images.steamusercontent.com/ugc/1788486540104155968/BC19C7DDAB4863404D9097B06B2F2BBF8F446304/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false') 
+        no-repeat center;
+    background-size: 150%;
+    transition: filter 0.3s ease, background-position 0.1s linear;
+    z-index: -1;
+}
+
+#buttons {
+    opacity:0.5;
+    position: fixed; 
+    bottom: 0px; 
+    right: -410px; 
+    /*bottom: 5px; 
+    right: 5px; */
+    height: 7%;
+    width: 20%;
+    display: block;
+    border-radius: 20px;
+    background: rgba(23, 33, 53, 0.349);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 12px 12px rgba(0,0,0,0.08);
+    margin: 15px;
+    padding: 15px;
+    color: rgb(216, 243, 238);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    z-index: 1 !important;
+    transition:0.5s ease-in-out;
+}
+
+#buttons:hover {
+    transform: translateX(-400px);
+    opacity: 1;
+}
+
+slider, input{
+    width: 50%;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    background-color: rgba(26, 26, 49, 0.377);
+    color: azure;
+    border: 1px solid rgb(59, 86, 99);
+}
+
+#okBtn{
+    background-color: rgba(25, 25, 53, 0.377);
+    color: azure;
+    margin-left: 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(132, 143, 168, 0.363);
+    height: 20px;
+    width: 30px;
+    font-size: 13px;
+    padding: 0;
+    transition: 0.2s;
+}
+
+#container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    color: rgb(216, 243, 238);
+    height: 100vh;
+    flex-wrap: wrap;
+    flex-direction: column; /*"I used flex-wrap: wrap and  height: 100vh, it created a gap between divs, how can I make it smaller?"*/
+}
+
+#container>div{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 70px;
+}
+
+#date, #clock {
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#name {
+    color: rgba(88, 115, 138, 0.336);
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    z-index: 4;
+}
