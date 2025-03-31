@@ -19,17 +19,19 @@ body {
 }
 
 #buttons {
+    background: rgba(23, 33, 53, 0.349) url("https://i.imgur.com/GzzRY2g.png") no-repeat left center;
+    background-size: 40px;
+    background-position: left -10px center;
     opacity:0.5;
     position: fixed; 
     bottom: 0px; 
     right: -410px; 
     /*bottom: 5px; 
     right: 5px; */
-    height: 7%;
-    width: 20%;
+    height: 19%;
+    width: 390px;
     display: block;
     border-radius: 20px;
-    background: rgba(23, 33, 53, 0.349);
     backdrop-filter: blur(3px);
     box-shadow: 0 12px 12px rgba(0,0,0,0.08);
     margin: 15px;
@@ -37,7 +39,11 @@ body {
     color: rgb(216, 243, 238);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     z-index: 1 !important;
-    transition:0.5s ease-in-out;
+    transition: 0.5s;
+}
+
+#buttons * {
+    margin-left: 10px;
 }
 
 #buttons:hover {
@@ -54,10 +60,10 @@ slider, input{
     border: 1px solid rgb(59, 86, 99);
 }
 
-#okBtn{
+#okBtn {
     background-color: rgba(25, 25, 53, 0.377);
     color: azure;
-    margin-left: 10px;
+    margin-left: 2px;
     border-radius: 20px;
     border: 1px solid rgba(132, 143, 168, 0.363);
     height: 20px;
@@ -76,6 +82,7 @@ slider, input{
     height: 100vh;
     flex-wrap: wrap;
     flex-direction: column; /*"I used flex-wrap: wrap and  height: 100vh, it created a gap between divs, how can I make it smaller?"*/
+    transition: 0.5s ease;
 }
 
 #container>div{
@@ -83,11 +90,11 @@ slider, input{
     font-size: 70px;
 }
 
-#date, #clock {
+ #clock {
     width: auto;
     display: flex;
     justify-content: center;
-}
+ }
 
 #name {
     color: rgba(88, 115, 138, 0.336);
@@ -96,4 +103,25 @@ slider, input{
     right: 15px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     z-index: 4;
+}
+
+.menu-arrow {
+    size: 5%;
+    position: absolute;
+    display: block;
+    text-align: left;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    filter: invert(1); 
+    z-index: 4;
+}
+
+a {
+    color: rgba(57, 108, 143, 0.5);
+}
+
+audio {
+    width: 300px; 
+    filter: invert(1); 
 }

@@ -14,7 +14,7 @@
                 let h = window.innerHeight/2;
                 let mouseX = e.clientX;
                 let mouseY = e.clientY;
-                let pos = `${50 - (mouseX - w) * 0.02}% ${50 - (mouseY - h) * 0.02}%`;
+                let pos = `${50 - (mouseX - w) * document.getElementById("parallaxBtn").value}% ${50 - (mouseY - h) * document.getElementById("parallaxBtn").value}%`;
                 document.querySelector("#background").style.backgroundPosition = pos; /*https://www.winterwind.com/tutorials/css/4*/
             }
         })();
@@ -24,7 +24,7 @@
 <body>
     <div id="name">
         <p>Maria Rjabtseva</p>
-        <p>https://github.com/nkdsnaketlu/1kodutoo</p>
+        <a href="https://github.com/nkdsnaketlu/1kodutoo">Github</a>
     </div>
        <!--  <img id="background-img" src="https://media.discordapp.net/attachments/632435357945954344/1355502911399923812/image.png?ex=67ea7b76&is=67e929f6&hm=bca8b6a54b210da6490d40b5ff580b771b7edcaa9ae84309678d8250ceb15d86&=&format=webp&quality=lossless&width=851&height=450" alt="background">-->
         <div id="container">
@@ -35,17 +35,31 @@
                 <img src="https://vignette.wikia.nocookie.net/vsbattles/images/6/60/Naked_Snake3.png/revision/latest?cb=20170101140133" alt="Snake" height="100px" width=" 50px">
             </div>
             <div id="date">date month year</div>
+            <div id="weekday">weekday</div>
         </div>
         <div id="buttons">
-                <label for="brightnessBtn">Brightness: </label>
-                <input id="brightnessBtn" type="range" min="0" max="200" value="100">
-                <br>
-                <label for="blurBtn">Blur: </label>
-                <input id="blurBtn" type="range" min="0" max="20" value="0" step=".1">
-                <br>
-                <label for="backgroundIput">Custom image:</label>
-                <input id="backgroundIput" type="text">
-                <button id="okBtn" onclick="setBackground()">ok</button>
+            <!--<span class="menu-arrow">
+                <img src="https://www.svgrepo.com/show/326563/chevron-back-outline.svg" alt="arrow">
+            </span> -->
+            <label for="colorBtn">Text color: </label>
+            <input type="color" id="colorBtn" name="colorBtn" value="#d8f3ee" />
+            <br>
+            <label for="brightnessBtn">Brightness: </label>
+            <input id="brightnessBtn" type="range" min="0" max="200" value="100">
+            <br>
+            <label for="blurBtn">Blur: </label>
+            <input id="blurBtn" type="range" min="0" max="20" value="0" step=".1">
+            <br>
+            <label for="parallaxBtn">Parallax: </label>
+            <input id="parallaxBtn" type="range" min="0" max=".04" value=".02" step=".001">
+            <br>
+            <label for="backgroundIput">Custom image:</label>
+            <input id="backgroundIput" type="text">
+            <button id="okBtn" onclick="setBackground()">ok</button>
+            <audio id="audioPlayer" controls autoplay muted> <!--"why autoplay on audio element is not working?"-->
+                <source src="https://www.tlu.ee/~nkdsnake/kodutoo1/rdr2.mp3" type="audio/mpeg">
+                Your browser does not support audio elements
+                </audio>
         </div>
         <div id="background"></div>
 </body>

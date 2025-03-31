@@ -1,15 +1,32 @@
-let h, m, s, minuteVal, hourVal, secondVal, dateElement, day, month, year;
-let r, g, b;
+let h, m, s, wd, minuteVal, hourVal, secondVal, dateElement, day, month, year, weekDay;
 
 h = document.getElementById('hours');
 m = document.getElementById('minutes');
 s = document.getElementById('seconds');
 dateElement = document.getElementById('date');
+wd = document.getElementById('weekday');
 let monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+let dayNames =['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 window.onload = function(){
-	document.querySelector("#brightnessBtn").addEventListener("input", setFilter);
+    document.querySelector("#brightnessBtn").addEventListener("input", setFilter);
     document.querySelector("#blurBtn").addEventListener("input", setFilter);
+    document.querySelector("#colorBtn").addEventListener("input", setColor);
+    document.body.addEventListener("click", unmute); 
+}
+
+function unmute(){
+    let audio = document.getElementById("audioPlayer");  //"why autoplay on audio element is not working?"
+    if (audio) {
+        audio.muted = false; 
+        audio.volume = '0.3'; //"can I change default value of audioplayers volume like audio.volume = '50'?"
+       audio.play(); 
+    }
+}
+
+function setColor(){
+    document.querySelector("#buttons").style.color =  document.querySelector("#colorBtn").value;
+    document.querySelector("#container").style.color =  document.querySelector("#colorBtn").value;
 }
 
 function setFilter(){
@@ -32,6 +49,7 @@ function updateClock(){
     day = date.getDate();
     month = date.getMonth();
     year = date.getFullYear();
+    //weekDay = date.getDay();
 
     if (hourVal<10) {
         hourVal = "0" + hourVal;
@@ -49,6 +67,7 @@ function updateClock(){
     m.innerHTML = minuteVal + ":";
     s.innerHTML = secondVal;
     dateElement.innerHTML = day + " " + monthNames[month] + ' ' + year;
+    wd.innerHTML = dayNames[date.getDay()];
 }
 
 setInterval(updateClock, 1000);
