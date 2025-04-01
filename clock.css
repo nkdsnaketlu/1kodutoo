@@ -26,8 +26,6 @@ body {
     position: fixed; 
     bottom: 0px; 
     right: -410px; 
-    /*bottom: 5px; 
-    right: 5px; */
     height: 19%;
     width: 390px;
     display: block;
@@ -42,7 +40,7 @@ body {
     transition: 0.5s;
 }
 
-#buttons * {
+.picture {
     margin-left: 10px;
 }
 
@@ -90,11 +88,11 @@ slider, input{
     font-size: 70px;
 }
 
- #clock {
+#clock {
     width: auto;
     display: flex;
     justify-content: center;
- }
+}
 
 #name {
     color: rgba(88, 115, 138, 0.336);
@@ -105,23 +103,35 @@ slider, input{
     z-index: 4;
 }
 
-.menu-arrow {
-    size: 5%;
-    position: absolute;
-    display: block;
-    text-align: left;
-    font-size: 20px;
-    color: white;
-    cursor: pointer;
-    filter: invert(1); 
-    z-index: 4;
-}
 
 a {
     color: rgba(57, 108, 143, 0.5);
 }
 
-audio {
-    width: 300px; 
-    filter: invert(1); 
+#musicBtn {
+    background: transparent;
+    border-color: transparent;
+    color: rgb(216, 243, 238);
+    font-size: 200%;
+    transition: 0.2s ease;
 }
+
+#musicBtn:hover {
+    mix-blend-mode: multiply;
+}
+
+#volumeBtn {
+    -webkit-appearance: none; /*https://www.w3schools.com/howto/howto_js_rangeslider.asp*/
+    background: rgba(139, 146, 165, 0.842);
+    outline: none;
+    opacity: 0.7;
+}
+
+#volumeBtn::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+    width: 10px;
+    height: 5px;
+  }
