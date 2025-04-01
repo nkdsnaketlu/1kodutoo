@@ -1,15 +1,15 @@
-### **README.md – Funktsionaalsuse kirjeldus **  
+### **README.md – Funktsionaalsuse kirjeldus**  
 
-# ** 1. Kodutöö – Elektrooniline kell**  
+# **1. Kodutöö – Elektrooniline kell**  
 **Autor:** Maria Rjabtseva 
 **Repo link:** https://github.com/nkdsnaketlu/1kodutoo
 
 ---
 
-## ** Funktsionaalsus**  
+## **Funktsionaalsus**  
 See veebirakendus näitab **elektroonilist kella**, mis on kohandatav ja sobib kasutamiseks **lauakella või ekraanisäästjana**
 
-### ** Kasutaja saab muuta järgmist:**  
+### **Kasutaja saab muuta järgmist:**  
 **Kella värvi** – Muuda kella ja teksti värvi värvivalija abil
 **Taustapilti** – Kasutaja saab lisada oma taustapildi
 **Taustavälimus** - Kasutaja saab muuta tausta *heledust ja hägusust(blur)*
